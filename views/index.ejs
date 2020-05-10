@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SimpleBlog</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    
+    <!-- <%- JSON.stringify(articles) %> -->
+
+    <div class="container">
+        <h1>Simple Blog</h1>
+        <hr>
+        <ul class="articles">
+            <% articles.forEach(function(article){ %>
+                <li class="card card-list">                           
+                    <%if (article.gambar!=undefined && article.gambar.length > 0) { %>
+                        <% article.gambar.forEach(function(item){ %>
+                            <img src="<%- item.thumbnails.large.url %>" />                                                                        
+                        <% }); %>            
+                    <% } %>
+                    <div>
+                        <h1><a href="detail/<%= article.slug %>"><%- article.judul %></a></h1>     
+                        <p><%- article.text.substring(0, 250) %>..</p>
+                        <a href="detail/<%= article.slug %>">Lihat selengkapnya</a>                        
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <!-- <div class="container">
+        <h1>Simple Blog</h1>
+        <hr>
+        
+        <ul class="articles">
+            <li class="card card-list">
+                <img src="https://dl.airtable.com/.attachmentThumbnails/ddad38a0936a20e911cacd614a775401/12507457" />                                                                                            
+                <div>
+                    <h1><a href="detail/lorem-ipsum-1">Ini adalah artikel 1</a></h1>                                
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam soluta ratione qui. Deleniti vel pr..</p>        
+                    <a href="detail/lorem-ipsum-1">Lihat selengkapnya</a>
+                </div>
+            </li>
+        
+            <li class="card card-list">
+                <div>
+                    <h1><a href="detail/lorem-ipsum-2">Ini adalah artikel 2</a></h1>                                
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam soluta ratione qui. Deleniti vel pr..</p>        
+                    <a href="detail/lorem-ipsum-1">Lihat selengkapnya</a>                    
+                </div>
+            </li>
+            
+        </ul>
+    </div> -->
+
+</body>
+</html>

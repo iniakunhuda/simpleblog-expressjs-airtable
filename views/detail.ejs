@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%- article.judul %></title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Simple Blog</h1>
+        <hr><br>
+
+        <a href="/">Kembali</a>
+        <br>
+
+        <div class="card">
+            <%if (article.gambar!=undefined && article.gambar.length > 0) { %>
+                <br><br>
+                <% article.gambar.forEach(function(item){ %>
+                    <div class="center">
+                        <img src="<%- item.thumbnails.large.url %>" />
+                    </div>
+                <% }); %>            
+            <% } %>
+            <div>
+                <h1><%- article.judul %></h1>
+                <p><%- article.text %></p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
