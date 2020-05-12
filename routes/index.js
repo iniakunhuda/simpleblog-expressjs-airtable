@@ -39,7 +39,7 @@ app.get('/detail/(:slug)', async (req, res) => {
             'text': obj.fields.Text,
             'slug': obj.fields.Slug,
         };
-        res.render('detail', {article: article});
+        res.render('detail', {article: article}); //
     });    
 })
 
