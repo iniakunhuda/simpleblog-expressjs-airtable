@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 var Airtable = require('airtable');
-var base = new Airtable({apiKey: API_KEY}).base(BASE_KEY);
+var base = new Airtable({apiKey: 'keyiBvXqBMcs7Lf9F'}).base('appjCEpZIopV6x76E');
 var articles = []
 
 app.get('/', async (req, res) => {
@@ -18,8 +18,8 @@ app.get('/', async (req, res) => {
                 'slug': record.get('Slug'),
             })
         });
+        res.render('index', {articles: articles});
     });
-    await res.render('index', {articles: articles});
 })
 
 app.get('/detail/(:slug)', async (req, res) => {
