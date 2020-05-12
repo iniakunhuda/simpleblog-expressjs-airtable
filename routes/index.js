@@ -8,6 +8,7 @@ var articles = []
 
 app.get('/', async (req, res) => {
     await airAPI.getAll('Articles').then((data) => {
+        articles = []
         data.forEach(function(r) {
             let obj = r;
             articles.push({
