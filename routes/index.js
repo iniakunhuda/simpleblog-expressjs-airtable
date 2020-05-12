@@ -41,20 +41,6 @@ app.get('/detail/(:slug)', async (req, res) => {
         };
         res.render('detail', {article: article});
     });    
-    // await base('Articles').select({
-    //     filterByFormula: `{Slug} = "${req.params.slug}"`
-    // }).firstPage(function(err, records) {
-    //     records.forEach(function(record) {
-    //         var article = {
-    //             'id': record.id,
-    //             'gambar': record.get('Gambar'),
-    //             'judul': record.get('Judul'),
-    //             'text': record.get('Text'),
-    //             'slug': record.get('Slug'),
-    //         };
-    //         res.render('detail', {article: article});
-    //     });        
-    // });
 })
 
 module.exports = app;
