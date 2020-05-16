@@ -4,11 +4,10 @@ const app = express();
 const airService = require('../services/airtable-api');
 const airAPI = new airService();
 
-var articles = []
 
 app.get('/', async (req, res) => {
     await airAPI.getAll('Articles').then((data) => {
-        articles = []
+        var articles = []
         data.forEach(function(r) {
             let obj = r;
             articles.push({
